@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-3">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img class="card-img" src="{% static 'img/house.jpg' %}" alt="">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <div class="card-title" style="font-size: 30px;">Apartment 1</div>
+                            <br>
+                            <div class="card-title">Location: Ataşehir</div>
+                            <div class="card-title">Price: 1000$</div>
+                            <p class="card-text">
+                                <small class="text-muted">3 days ago</small>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <img class="card-img" src="{% static 'img/house2.jpg' %}" alt="">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <div class="card-title" style="font-size: 30px;">Apartment 2</div>
+                            <br>
+                            <div class="card-title">Location: Kadıköy</div>
+                            <div class="card-title">Price: 1500$</div>
+                            <p class="card-text">
+                                <small class="text-muted">3 days ago</small>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <img class="card-img" src="{% static 'img/house3.jpg' %}" alt="">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <div class="card-title" style="font-size: 30px;">Apartment 3</div>
+                            <br>
+                            <div class="card-title">Location: Maltepe</div>
+                            <div class="card-title">Price: 2000$</div>
+                            <p class="card-text">
+                                <small class="text-muted">3 days ago</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

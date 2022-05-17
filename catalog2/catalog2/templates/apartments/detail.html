@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-3">
+            <img class="card-img" src="{% static apartment.get_image_path %}" alt="">
+        </div>
+        <div class="col-md-9">
+                <div class="card-body" style="border-style: solid; border-color: rgb(173, 216, 230);">
+                    <div class="card-title" style="font-size: 30px;">{{apartment.name}}</div>
+                    <div class="card-title">Description: {{apartment.description}}</div>
+                    <div class="card-title">Price: {{apartment.price}}$</div>   
+                    <div class="card-title">Location: {{apartment.location}}</div>
+                    <div class="card-title">Square Meters: {{apartment.square_meters}}m2</div>
+                    <div class="card-title">Apartment Number: {{apartment.apartment_number}}</div>
+                    <div class="card-title">Apartment Color: {{apartment.color}}</div>
+                    <p class="card-text">
+                        <small class="text-muted">{{apartment.created_date | timesince}}</small>
+                    </p>
+                </div>
+        </div>
+    </div>
+{% endblock %}

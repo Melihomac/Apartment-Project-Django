@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <br>
+            <h1 class="display-4">Apartment Sales List</h1>
+            <br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            {% if apartments %}
+                {% for apartment in apartments %}
+                <div class="card mb-3">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img class="card-img" src="{% static apartment.get_image_path %}" alt="">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <div class="card-title" style="font-size: 30px;">
+                                <a href="{% url 'detail' apartment.id %}">{{apartment.name}}</a>    
+                            </div>
+                            <div class="card-title">{{apartment.description}}</div>
+                            <div class="card-title">{{apartment.location}}</div>
+                            <div class="card-title">{{apartment.price}}$</div>
+                            <p class="card-text">
+                                <small class="text-muted">{{apartment.created_date | timesince}}</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="alert alert-warning">
+                    <p>No Apartment</p>
+                </div>
+            {% endif %}
+           
+        </div>
+    </div>
+{% endblock %}

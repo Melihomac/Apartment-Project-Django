@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="row">
+    <div class="col-md-3">
+        <img class="card-img" src="{% static 'img/about.jpg' %}" alt="">
+    </div>
+    <div class="col-md-9">
+        <div class="card-body" style="border-style: solid; border-color: rgb(173, 216, 230);">
+            <div class="card-title" style="font-size: 30px;">About</div>
+            <div class="card-title"><br>
+                My name is Melih Omac. I am a computer engineer student. 
+                This website is my homework. I used Python3 with Django.
+                I prepared this website for Programming Languages class. I used sqllite as database. 
+                I also used bootstrap for Html and Css...
+                <br>
+                <br>
+                This website was built on the apartment management system.
+                You can see the information of the apartments and edit them. 
+                There is a special admin panel for you. You can showcase all of these on your website.
+                <br>
+                <br>
+                Thank You !
+            </div>
+            <p class="card-text">
+                <small class="text-muted">{{apartment.created_date | timesince}}</small>
+            </p>
+        </div>
+    </div>
+    </div>
+{% endblock %}
